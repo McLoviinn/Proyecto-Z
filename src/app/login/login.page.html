@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content">
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <ion-avatar class="login-avatar">
+          <img alt="User Avatar" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <h2>Bienvenido!</h2>
+      </div>
+
+      <form class="login-form">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email"required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password"required>
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+      
+        <a href="/home" class="login-button-link">Login</a>
+      </form>
+
+      <div class="login-footer">
+        <p>Olvido su contraseña? <a href="#">Recuperar</a></p>
+      </div>
+    </div>
+  </div>
+</ion-content>
