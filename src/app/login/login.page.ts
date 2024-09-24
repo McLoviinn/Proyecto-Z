@@ -10,7 +10,7 @@ export class LoginPage {
 
   constructor(private router: Router) {}
 
-  // Método para redirigir a la página 'home'
+
   login() {
     this.router.navigateByUrl('/home');
   }

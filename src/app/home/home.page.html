@@ -1,35 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large" class="center-title">Home</ion-title>
+<ion-menu contentId="main-content" side="start" menuId="first">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button routerLink="/ver-asistencias">Ver Asistencias</ion-item>
+      <ion-item button routerLink="/generar-reporte">Generar Reporte</ion-item>
+      <ion-item button routerLink="/configurar-horarios">Configurar Horarios</ion-item>
+      <ion-item button routerLink="/perfil-usuario">Perfil de Usuario</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="primary">
-      <ion-button shape="round" class="qr-button">
-        <ion-icon name="qr-code-outline"></ion-icon>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="center-title">Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button shape="round" class="qr-button" (click)="salir()"> 
+        <ion-icon name="exit-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-footer>
+</ion-header>
+
+<ion-content id="main-content" [fullscreen]="true" class="ion-padding">
+  <div class="welcome-container">
+    <h2>¡Bienvenido a Register App!</h2>
+    <p>Utiliza las opciones del menú para navegar y gestionar la asistencia.</p>
+    
+    <div class="qr-button-container">
+      <ion-button shape="round" class="qr-button" expand="block" color="secondary">
+        <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+        Escanear QR
+      </ion-button>
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="center-title">APP asistencia</ion-title>
+  </ion-toolbar>
+</ion-footer>
