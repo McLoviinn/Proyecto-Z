@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+.qr-button {
+  --size: 60px; 
+  --border-radius: 90%; 
+  --background: white; 
+  --box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+}
+
+ion-footer {
+  text-align: center; 
+}
+
+ion-icon{
+  text-align: center;
+  font-size: 25px;
+}
