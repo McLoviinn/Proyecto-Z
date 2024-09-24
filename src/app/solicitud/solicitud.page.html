@@ -1,12 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Solicitud de Cambio de Contraseña</ion-title>
+    <ion-title>Cambio de Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<div class="Texto"><h6>Ingresa el código que te hemos enviado a tu correo y establece una nueva contraseña.</h6></div>
+<ion-content class="ion-padding">
+  <div class="Texto">
+    <h6>Ingresa el código que te hemos enviado a tu correo y establece una nueva contraseña.</h6>
+  </div>
 
-<ion-content>
   <form (submit)="onSubmit()" class="form">
     <ion-item>
       <ion-label position="floating">Código de acceso</ion-label>
@@ -27,7 +29,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Confirmar Nueva Contraseña</ion-label>
+      <ion-label position="floating">Confirmar Contraseña</ion-label>
       <ion-input 
         [(ngModel)]="confirmarContrasena" 
         name="confirmarContrasena" 
@@ -39,10 +41,7 @@
       </ion-input>
     </ion-item>
 
-    <ion-button expand="full" type="submit">Enviar Solicitud</ion-button>
-  </form>
+    <ion-button expand="full" routerLink="/login" class="submit-button">Enviar Solicitud</ion-button>
 
-  <div class="footer-text">
-    <p>¿Ya tienes cuenta? <a href="/login">Iniciar sesión</a></p>
-  </div>
+  </form>
 </ion-content>
