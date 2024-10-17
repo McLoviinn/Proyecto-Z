@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; 
-import { Storage } from '@ionic/storage-angular';  
+import { Router } from '@angular/router';  // Para navegar a la página Home
+import { Storage } from '@ionic/storage-angular';  // Para manejar la persistencia de datos
 
 @Component({
   selector: 'app-login',
@@ -8,25 +8,20 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = '';  
-  password: string = '';  
+  username: string = '';  // Campo para el usuario
+  password: string = '';  // Campo para la contraseña
 
   constructor(private router: Router, private storage: Storage) {}
 
-<<<<<<< Updated upstream
-  // Método para redirigir a la página 'home'
-  login() {
-    this.router.navigateByUrl('/home');
-=======
+  // Método para manejar el inicio de sesión
   async login() {
     if (this.username === 'admin' && this.password === 'admin123') {
-  
-      await this.storage.set('isLoggedIn', true);  
-      this.router.navigate(['/home']);  
+      // Autenticación exitosa
+      await this.storage.set('isLoggedIn', true);  // Guarda el estado de autenticación en el Storage
+      this.router.navigate(['/home']);  // Navega a la página Home
     } else {
-      
+      // Si las credenciales no son válidas, muestra un error (puedes agregar un mensaje)
       alert('Credenciales incorrectas. Inténtalo nuevamente.');
     }
->>>>>>> Stashed changes
   }
 }
