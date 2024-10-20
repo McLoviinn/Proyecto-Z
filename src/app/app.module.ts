@@ -22,4 +22,3 @@ import { IonicStorageModule } from '@ionic/storage-angular';  // Importa el mód
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
