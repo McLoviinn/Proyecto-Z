@@ -20,7 +20,7 @@ export class LoginPage {
       await this.storage.set('isLoggedIn', true);  // Guarda el estado de autenticación en el Storage
       this.router.navigate(['/home']);  // Navega a la página Home
     } else {
-      // Si las credenciales no son válidas, muestra un error (puedes agregar un mensaje)
+      // Si las credenciales no son válidas, muestra un error
       alert('Credenciales incorrectas. Inténtalo nuevamente.');
     }
   }
