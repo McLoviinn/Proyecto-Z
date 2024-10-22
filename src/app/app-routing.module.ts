@@ -8,7 +8,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',  // Cambia la redirección a 'login'
+
+    redirectTo: 'login', 
+
     pathMatch: 'full'
   },
   {
@@ -17,14 +19,13 @@ const routes: Routes = [
   },
   {
     path: 'reset-password',
-    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+    loadChildren: () => import('./reset-password/reset-password.module').then(m => m.ResetPasswordPageModule)
   },
   {
     path: 'solicitud',
-    loadChildren: () => import('./solicitud/solicitud.module').then( m => m.SolicitudPageModule)
+    loadChildren: () => import('./solicitud/solicitud.module').then(m => m.SolicitudPageModule)
   },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
@@ -32,3 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
