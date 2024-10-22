@@ -8,7 +8,9 @@ const routes: Routes = [
   },
   {
     path: '',
+
     redirectTo: 'login', 
+
     pathMatch: 'full'
   },
   {
@@ -23,9 +25,7 @@ const routes: Routes = [
     path: 'solicitud',
     loadChildren: () => import('./solicitud/solicitud.module').then(m => m.SolicitudPageModule)
   },
-
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
@@ -33,3 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

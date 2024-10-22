@@ -12,7 +12,6 @@ export class LoginPage {
   password: string = '';  // Campo para la contraseña
 
   constructor(private router: Router, private storage: Storage) {}
-
   // Método para manejar el inicio de sesión
   async login() {
     if (this.username === 'admin' && this.password === 'admin123') {
