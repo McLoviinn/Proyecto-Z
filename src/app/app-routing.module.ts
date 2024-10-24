@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard'; // Importa el guard aquí
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    canActivate: [AuthGuard]  // Protegemos la ruta con el guard
   },
   {
     path: '',
-
     redirectTo: 'login', 
-
     pathMatch: 'full'
   },
   {
@@ -26,6 +26,7 @@ const routes: Routes = [
     loadChildren: () => import('./solicitud/solicitud.module').then(m => m.SolicitudPageModule)
   },
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
@@ -33,4 +34,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

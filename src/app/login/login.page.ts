@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Para navegar a la página Home
-import { Storage } from '@ionic/storage-angular';  // Para manejar la persistencia de datos
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +8,25 @@ import { Storage } from '@ionic/storage-angular';  // Para manejar la persistenc
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = '';  // Campo para el usuario
-  password: string = '';  // Campo para la contraseña
+
+  username: string = '';
+  password: string = '';
 
   constructor(private router: Router, private storage: Storage) {}
-  // Método para manejar el inicio de sesión
+
   async login() {
-    if (this.username === 'admin' && this.password === 'admin123') {
-      // Autenticación exitosa
-      await this.storage.set('isLoggedIn', true);  // Guarda el estado de autenticación en el Storage
-      this.router.navigate(['/home']);  // Navega a la página Home
+    // Aquí deberías realizar la autenticación real con un backend
+    if (this.username === 'admin' && this.password === 'admin') {
+      // Guarda el estado de la sesión
+      await this.storage.set('isLoggedIn', true);
+      // Redirige al home
+      this.router.navigate(['/home']);
     } else {
-      // Si las credenciales no son válidas, muestra un error
-      alert('Credenciales incorrectas. Inténtalo nuevamente.');
+      // Mostrar mensaje de error, etc.
     }
+  }
+
+  async ngOnInit() {
+    await this.storage.create();
   }
 }
